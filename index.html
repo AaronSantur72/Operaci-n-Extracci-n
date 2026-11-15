@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operación Extracción – FPS 3D</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <!-- Three.js se incluye localmente en /lib (no requiere internet) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./lib/three.module.js",
+        "three/addons/": "./lib/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- ======= HUD (interfaz durante la partida) ======= -->
+  <div id="hud" class="oculto">
+    <div id="objetivo">
+      <div class="titulo-hud">OBJETIVO</div>
+      <div id="texto-objetivo">Llega a la zona de extracción</div>
+      <div id="distancia">Distancia: -- m</div>
+      <div id="zona-actual">Zona: Refugio</div>
+    </div>
+
+    <div id="estadisticas">
+      <div>Zombis eliminados: <b id="bajas">0</b></div>
+      <div>Zombis persiguiéndote: <b id="activos">0</b></div>
+      <div>Tiempo: <b id="tiempo">0:00</b></div>
+      <div id="potenciador" class="oculto">⚡ ADRENALINA <b id="potenciador-t">0</b>s</div>
+    </div>
+
+    <div id="mira"></div>
+    <div id="marcador-impacto">✕</div>
+
+    <div id="panel-armas">
+      <div id="nombre-arma">Pistola 9mm</div>
+      <div id="municion-actual"><span id="balas">12</span><small> balas</small></div>
+      <div class="lista-armas">
+        <div id="slot-0" class="slot activo">[1] Pistola: <b id="mun-0">12</b></div>
+        <div id="slot-1" class="slot">[2] Rifle: <b id="mun-1">6</b></div>
+      </div>
+    </div>
+
+    <div id="aviso"></div>
+    <div id="peligro"></div>
+  </div>
+
+  <!-- ======= Pantallas superpuestas ======= -->
+  <div id="pantalla-inicio" class="pantalla">
+    <h1>OPERACIÓN EXTRACCIÓN</h1>
+    <h2>Sobrevive al apocalipsis</h2>
+    <p>La ciudad está infestada. Atraviesa la calle principal, la plaza, el callejón
+       y la zona industrial hasta el <b>helipuerto de extracción</b>.<br />
+       La munición es limitada: recoge las <b>cajas amarillas</b> para reabastecerte.</p>
+    <table class="controles">
+      <tr><td>W A S D</td><td>Moverse</td></tr>
+      <tr><td>Mouse</td><td>Apuntar / mirar</td></tr>
+      <tr><td>Clic izquierdo</td><td>Disparar (un disparo por clic)</td></tr>
+      <tr><td>1 / 2</td><td>Pistola / Rifle</td></tr>
+      <tr><td>R</td><td>Reiniciar (tras Game Over o victoria)</td></tr>
+      <tr><td>ESC</td><td>Pausa</td></tr>
+    </table>
+    <div id="estado-carga">Cargando modelos 3D...</div>
+    <button id="btn-jugar" disabled>JUGAR</button>
+  </div>
+
+  <div id="pantalla-pausa" class="pantalla oculto">
+    <h1>PAUSA</h1>
+    <button id="btn-continuar">CONTINUAR</button>
+  </div>
+
+  <div id="pantalla-gameover" class="pantalla oculto">
+    <h1 class="rojo">GAME OVER</h1>
+    <h2>Un zombi te ha atrapado.</h2>
+    <p id="resumen-derrota"></p>
+    <button id="btn-reiniciar-1">REINICIAR (R)</button>
+  </div>
+
+  <div id="pantalla-victoria" class="pantalla oculto">
+    <h1 class="verde">¡MISIÓN COMPLETADA!</h1>
+    <h2>Has llegado a la zona de extracción</h2>
+    <p id="resumen-victoria"></p>
+    <button id="btn-reiniciar-2">JUGAR DE NUEVO (R)</button>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

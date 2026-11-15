@@ -1,0 +1,53 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000;
+  font-family: "Segoe UI", Arial, sans-serif; color: #e8e8e8; user-select: none; }
+canvas { display: block; }
+.oculto { display: none !important; }
+
+/* ---------- HUD ---------- */
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#objetivo, #estadisticas { position: absolute; top: 16px; background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.15); padding: 10px 14px; border-radius: 6px; font-size: 14px; line-height: 1.5; }
+#objetivo { left: 16px; }
+#estadisticas { right: 16px; text-align: right; }
+.titulo-hud { color: #7dff9b; font-weight: bold; letter-spacing: 2px; font-size: 12px; }
+#potenciador { color: #6cf; font-weight: bold; }
+
+#mira { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; transform: translate(-50%,-50%); }
+#mira::before, #mira::after { content: ""; position: absolute; background: #fff; box-shadow: 0 0 2px #000; }
+#mira::before { left: 10px; top: 0; width: 2px; height: 22px; }
+#mira::after  { top: 10px; left: 0; width: 22px; height: 2px; }
+#marcador-impacto { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-52%);
+  font-size: 34px; color: #ff3b3b; font-weight: bold; opacity: 0; transition: opacity .15s; }
+#marcador-impacto.visible { opacity: 1; transition: none; }
+
+#panel-armas { position: absolute; right: 16px; bottom: 16px; background: rgba(0,0,0,.6);
+  border: 1px solid rgba(255,255,255,.15); padding: 12px 16px; border-radius: 6px; min-width: 220px; text-align: right; }
+#nombre-arma { font-size: 15px; color: #ffd166; font-weight: bold; }
+#municion-actual { font-size: 44px; font-weight: bold; line-height: 1.1; }
+#municion-actual.vacio { color: #ff4d4d; }
+#municion-actual small { font-size: 14px; color: #aaa; }
+.lista-armas { margin-top: 6px; font-size: 13px; }
+.slot { opacity: .55; } .slot.activo { opacity: 1; color: #ffd166; }
+
+#aviso { position: absolute; left: 50%; bottom: 120px; transform: translateX(-50%);
+  background: rgba(0,0,0,.7); padding: 8px 16px; border-radius: 4px; font-size: 16px; opacity: 0; transition: opacity .3s; }
+#aviso.visible { opacity: 1; }
+#peligro { position: absolute; inset: 0; box-shadow: inset 0 0 160px rgba(255,0,0,.85); opacity: 0; transition: opacity .2s; }
+
+/* ---------- Pantallas ---------- */
+.pantalla { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(circle, rgba(20,25,35,.88), rgba(0,0,0,.96)); text-align: center; gap: 14px; padding: 20px; }
+.pantalla h1 { font-size: 54px; letter-spacing: 4px; color: #ffd166; text-shadow: 0 0 18px rgba(255,170,0,.5); }
+.pantalla h1.rojo { color: #ff3333; text-shadow: 0 0 25px rgba(255,0,0,.8); font-size: 80px; }
+.pantalla h1.verde { color: #5dff8a; text-shadow: 0 0 25px rgba(0,255,100,.6); }
+.pantalla h2 { font-weight: normal; color: #ccc; }
+.pantalla p { max-width: 640px; line-height: 1.5; color: #bbb; }
+.controles { border-collapse: collapse; margin: 6px auto; }
+.controles td { padding: 4px 14px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.controles td:first-child { color: #ffd166; font-weight: bold; text-align: right; }
+button { pointer-events: auto; font-size: 20px; padding: 12px 40px; background: #b8860b; color: #fff; border: none;
+  border-radius: 4px; cursor: pointer; letter-spacing: 2px; font-weight: bold; }
+button:hover:not(:disabled) { background: #daa520; }
+button:disabled { opacity: .4; cursor: wait; }
+#estado-carga { color: #888; font-size: 13px; }

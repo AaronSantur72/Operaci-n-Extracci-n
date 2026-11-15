@@ -89,7 +89,7 @@ Fuentes y recursos externos
 - Texturas (ventanas, cajas, helipuerto) y sonidos: **generados por código** (Canvas 2D y Web Audio API).
 
 Video demostrativo
-Enlace: *(agregar enlace de YouTube / Drive)*
+Enlace: https://drive.google.com/file/d/1o-fOlJII9DGtkj9INP8acDRASIFDeblF/view?usp=sharing
 
 Juego en línea (opcional)
 Enlace: https://aaronsantur72.github.io/Operaci-n-Extracci-n/

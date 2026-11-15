@@ -1,4 +1,4 @@
-# 🧟 Operación Extracción – FPS 3D
+Operación Extracción – FPS 3D
 
 Videojuego de disparos en primera persona (FPS) desarrollado con **Three.js (WebGL)** para el curso
 **Computación Gráfica y Visual – UPN (T3)**.
@@ -7,7 +7,7 @@ Videojuego de disparos en primera persona (FPS) desarrollado con **Three.js (Web
 > principal, la plaza central, el callejón y la zona industrial, administra tu munición y llega al
 > **helipuerto de extracción** antes de ser atrapado.
 
-## 🎮 Controles
+Controles
 
 | Control | Acción |
 |---|---|
@@ -22,7 +22,7 @@ Videojuego de disparos en primera persona (FPS) desarrollado con **Three.js (Web
 | **R** | Reiniciar tras *Game Over* o victoria |
 | **ESC** | Pausa |
 
-## ▶️ Instalación y ejecución
+Instalación y ejecución
 
 El juego **no requiere instalar dependencias**: Three.js está incluido en la carpeta `lib/`.
 Como los módulos ES y los modelos `.glb` se cargan con `fetch`, **debe ejecutarse desde un servidor local**
@@ -51,8 +51,7 @@ Los modelos ya vienen incluidos en `models/`. Para volver a generarlos:
 pip install trimesh
 python herramientas/generar_modelos.py
 ```
-
-## 🗺️ Mecánicas implementadas
+Mecánicas implementadas
 
 | Requerimiento | Implementación |
 |---|---|
@@ -68,7 +67,7 @@ python herramientas/generar_modelos.py
 | RF10 Coleccionables | Cajas de munición y potenciador de velocidad *Adrenalina* (8 s). |
 | RF11 Dificultad | 26 zombis distribuidos por zonas, zombis *corredores* más rápidos, munición limitada, callejón con barricadas en zigzag. |
 
-## 📁 Estructura del proyecto
+Estructura del proyecto
 ```
 operacion-extraccion/
 ├── index.html               # Página principal, HUD y pantallas
@@ -82,18 +81,18 @@ operacion-extraccion/
 └── herramientas/generar_modelos.py   # Script que genera los GLB
 ```
 
-## 📚 Fuentes y recursos externos
+Fuentes y recursos externos
 - **Three.js r170** – Licencia MIT – <https://threejs.org>
 - **GLTFLoader / BufferGeometryUtils** – ejemplos oficiales de Three.js, licencia MIT.
 - **trimesh** (Python) – Licencia MIT – usado solo para generar los modelos GLB.
 - Modelos 3D (`pistola.glb`, `rifle.glb`, `zombi.glb`): **creación propia** mediante el script `herramientas/generar_modelos.py`.
 - Texturas (ventanas, cajas, helipuerto) y sonidos: **generados por código** (Canvas 2D y Web Audio API).
 
-## 🎥 Video demostrativo
+Video demostrativo
 Enlace: *(agregar enlace de YouTube / Drive)*
 
-## 🌐 Juego en línea (opcional)
-Enlace: *(agregar enlace de GitHub Pages)*
+Juego en línea (opcional)
+Enlace: https://aaronsantur72.github.io/Operaci-n-Extracci-n/
 
-## 👤 Autor
-*(Nombre del estudiante)* – Universidad Privada del Norte – Computación Gráfica y Visual – 2026
+Autor
+Luis Aaron Santur Vega – Universidad Privada del Norte – Computación Gráfica y Visual – 2026
